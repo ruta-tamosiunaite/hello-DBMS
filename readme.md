@@ -76,7 +76,7 @@ A Database Management System (DBMS) is software designed to store, manipulate, a
 | DBMS         | Description                                                                                                            | Illustration                          | Source                                    |
 |--------------|------------------------------------------------------------------------------------------------------------------------|---------------------------------------|-------------------------------------------|
 | **MySQL**    | MySQL is an open-source relational database management system, very popular for web applications.                        | ![MySQL Logo](https://upload.wikimedia.org/wikipedia/fr/thumb/6/62/MySQL.svg/1200px-MySQL.svg.png) | [Official MySQL Site](https://www.mysql.com/) |
-| **PostgreSQL**| PostgreSQL is an advanced, open-source relational DBMS, focusing on standards and extensibility.                        | ![PostgreSQL Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/993px-Postgresql_elephant.svg.png) | [Official PostgreSQL Site](https://www.postgresql.org/) |
+| **PostgreSQL**| PostgreSQL is an advanced, open-source relational DBMS, focusing on standards and extensibility.                        | ![PostgreSQL Logo](https://bleemeo.com/static/96fc932c24667bf130cd1bbd6c5f7b96/5aae9/Postgre_logo.png) | [Official PostgreSQL Site](https://www.postgresql.org/) |
 | **MongoDB**  | MongoDB is a NoSQL document-oriented DBMS offering high flexibility and performance for applications with large data volumes. | ![MongoDB Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/2560px-MongoDB_Logo.svg.png) | [Official MongoDB Site](https://www.mongodb.com/) |
 | **Oracle Database** | Oracle Database is a powerful and comprehensive relational DBMS used for large enterprise applications.               | ![Oracle Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Oracle_Logo.svg/2560px-Oracle_Logo.svg.png) | [Official Oracle Site](https://www.oracle.com/database/) |
 
@@ -144,5 +144,3 @@ ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durabi
 **References:**
 - "ACID Properties" - [IBM](https://www.ibm.com/cloud/learn/acid-properties)
     
-
-d
