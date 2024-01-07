@@ -1,0 +1,35 @@
+{% block content %}
+<div class="finding-container">
+    <div class="white-rectangular">
+        <div class="data-insight">
+            {% if results %}
+                <h2>{{ request }}</h2>
+                <table>
+                    <!-- Table Headers -->
+                    {% if headers %}
+                        <tr>
+                            {% for header in headers %}
+                                <th>{{ header }}</th>
+                            {% endfor %}
+                        </tr>
+                    {% endif %}
+                    <!-- Table Data -->
+                    {% for row in results %}
+                        <tr>
+                            {% for col in row %}
+                                <td>{{ col }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+        </div>
+        <div class="CO2-contribution">
+            {% if total_emissions %}
+                <h2>CO2 emissions of {{ results[0][0] }}:</h2>
+                <h1>{{ total_emissions }} g CO2/kWh</h1>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

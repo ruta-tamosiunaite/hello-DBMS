@@ -1,0 +1,357 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box; /* Include padding and border in the element's width and height */
+  }
+
+
+.menu nav {
+    background-color: rgb(119, 255, 201);
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding-top: 1pc;
+    padding-bottom: 1pc;
+    min-height: 2.5pc;
+}
+
+.menu a {
+    margin-right: 30px; /* Adjust as needed */
+    color: black;
+    text-decoration: solid;
+    font-size: 1.05pc;
+    font-weight: 400;
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+table {
+    width: 50%; /* Make the table take the full width of the container */
+    border-collapse: collapse; /* Optional: Removes the double border */
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 5px; /* Add some padding for content */
+    min-width: 50px; /* Minimum width for each cell */
+    max-width: 95px;
+    word-wrap: break-word; /* To ensure long text wraps and fits the cell */
+    text-align: center;
+}
+
+/* New style for the first column */
+td:first-child {
+    min-width: 170px; /* Adjust as needed */
+    width: 20%; /* You can also use a percentage to control width */
+    text-align: left;
+}
+
+td {text-align: right;}
+
+th {text-align: center;}
+
+/* Layout styles */
+.container {
+    display: flex; /* Enables flexbox */
+}   
+
+
+/* FINDING PAGE */
+/* Style for the main container */
+.finding-container {
+    padding-top: 5px; /* Space between the screen edge and the white rectangular */
+    padding-bottom: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Style for the white rectangular that contains both columns */
+.white-rectangular {
+    background-color: white; /* White background for the rectangular */
+    border-radius: 10px; /* Rounded corners */
+    display: flex; /* Use flexbox for layout */
+    overflow: hidden; /* Hide overflow to maintain the rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visibility */
+    padding: 20px 20px 25px 20px; /* Space inside the white rectangular */
+}
+
+/* Column styling */
+.data-insight {
+    width: 60%; /* Take two-thirds of the space */
+    padding-right: 10px;
+    padding-left: 30px;
+}
+
+.data-insight h2{
+    margin-top: 10px;
+}
+
+.CO2-contribution {
+    width: 40%; /* Take one-third of the space */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Horizontally center content */
+    justify-content: center; /* Vertically center content in the available space */
+    text-align: center; /* Center the text inside */
+    padding-right: 20px;
+}
+
+.CO2-contribution h2 {
+    margin-bottom: 10px; /* Adds space below the h2 element */
+}
+
+/* Optional: Additional responsive adjustments */
+@media (max-width: 768px) {
+    .white-rectangular {
+        flex-direction: column; /* Stack columns vertically on smaller screens */
+    }
+
+    .data-insight,
+    .CO2-contribution {
+        width: 100%; /* Each column takes full width */
+    }
+}
+/* /FINDING PAGE */
+
+
+/* EMISSIONS PAGE */
+.page-emissions {
+    width: 100%;
+    min-height: 100vh; /* Full height */
+    margin: 0;    
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.emissions-form {
+    font-size: 1.2pc
+}
+
+#forest {
+    width: 100%; /* Full width of its parent */
+    max-width: 99%; /* Prevent it from exceeding the screen width */
+    min-height: 200px; /* Minimum height */
+    position: absolute;
+    overflow-x: hidden; /* Hide the horizontal overflow */
+}
+/* /EMISSIONS PAGE */
+
+
+/* SQL CONSOLE PAGE */
+.page-console {
+    width: 100%;
+    min-height: 100vh; /* Full height */
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.console {
+    flex: 2; /* Console takes more space */
+}
+
+.history {
+    padding-left: 25px;
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: 400px; /* Adjust based on your needs */
+}
+
+.info {
+    flex: 2; /* Informational sections take less space */
+    padding: 10px;
+    margin-top: 5%; 
+}
+
+.collapsible {
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.content {
+    padding: 0 px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.pointer {
+    display: inline-block;
+    transition: transform 0.2s; /* Smooth transition for rotation */
+}
+
+/* Rotate the pointer when the section is active */
+.collapsible.active .pointer {
+    transform: rotate(90deg); /* Rotate 90 degrees */
+}
+
+/* /SQL CONSOLE PAGE */
+
+
+/* HOME PAGE */
+
+/* Style for the word to be hovered */
+.custom-tooltip {
+    position: relative;
+    border-bottom: 1px dashed lightgrey; /* Slight underline */
+    cursor: help; /* Changes cursor to indicate interactive element */
+}
+
+/* Style for the tooltip text */
+.custom-tooltip .tooltip-text {
+    visibility: hidden;
+    width: 250px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 10px;
+    
+    /* Positioning */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    
+    /* Fade in */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.custom-tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin: 15px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+/* Show the tooltip text when you hover over the tooltip container */
+.custom-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* HOME PAGE */
+.page-home {
+    background-color: #f0f0f0;
+}
+
+.page-index {
+    width: 100%;
+    min-height: 100vh; /* Full height */
+    margin: 0;   
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #ffffff;
+}
+
+.index h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-top: 20px;
+}
+
+.page-index-container {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4%;
+}
+
+.index-text {
+    padding-left: 40px;
+    flex: 5;
+    font-size: 1.2pc;
+}
+
+.index-text h3 {
+    text-align: center;
+    font-weight: 400;
+}
+
+.index-text h4 {
+    text-align: center;
+    font-weight: 200;
+}
+
+.index-photo {
+    flex: 1;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.index-photo img {
+    max-height: 220px;
+}
+
+.index-photo-2 {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.index-photo-2 img {
+    max-height: 60px;
+}
+
+.container-50-50-h {
+    display: flex; /* Enables flexbox */
+    align-items: center;
+} 
+
+.container-50 {
+    flex: 1;
+} 
+
+.container-50 h3 {
+    font-size: 1.3pc;
+} 
+
+.container-50 a {
+    text-decoration: none;
+    color: black;
+} 
+
+/* /HOME PAGE */
+
+.index {
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.page-footer {
+    background-color: rgb(119, 255, 201);
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.footer_text {
+    margin: 0;
+    color: #6c757d;
+  }
+  
+.footer-container {
+    padding: 20px 20px 20px 50px;
+    text-align: center;
+  }

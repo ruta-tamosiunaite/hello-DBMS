@@ -1,0 +1,131 @@
+{% extends "menu.html" %}
+{% block content %}
+<div class="index">
+    <div class="page-emissions">    
+        <h1>CO2 Emissions per Country or Region</h1>
+
+        <!-- Combined Form for Country Selection and Electricity Consumption -->
+        <form action="/country-emissions" method="post">
+            <label for="countrySelect">Select a country:</label>
+            <select name="countrySelect" id="countrySelect">
+                {% for country in countries %}
+                <option value="{{ country[0] }}" {% if selected_country == country[0] %}selected{% endif %}>{{ country[0] }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <label for="electricityConsumption">Enter Electrical power consumed continuously in kWh:</label>
+            <input type="number" step="0.01" id="electricityConsumption" name="electricityConsumption" value="{{ electricity_consumption }}">
+            
+            <input type="submit" value="Calculate">
+        </form>
+
+        <!-- Table to display filtered data -->
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Source de production</th>
+                    <th>% d’utilisation</th>
+                    <th>Médiane de gCO2/kWh</th>
+                    <th>Contribution en émission gCO2/kWh</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row[0] }}</td> <!-- Source de production -->
+                    <td>{{ row[1] }}%</td> <!-- % d’utilisation -->
+                    <td>{{ row[2] }}</td> <!-- Médiane de gCO2/kWh -->
+                    <td>{{ row[3] }}</td> <!-- Contribution en émission gCO2/kWh -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <!-- Display Total Emissions -->
+        <h3>Total Emissions for {{ selected_country }}: {{ total_emissions }} g CO2/kWh</h3>
+
+        <!-- Display Annual Total Emissions -->
+        {% if annual_emissions %}
+            <h3>Total Annual CO2 Emissions in {{ selected_country }} for {{ electricity_consumption }} kWh continuous electricity consumption: {{ annual_emissions }} kg CO2/year</h3>
+        {% endif %}
+
+        <!-- Display Annual Total Emissions -->
+        {% if trees_balance %}
+            <h3>Necessary number of trees in order to absorb the CO2 generated: {{ trees_balance }} trees</h3>
+            <br>
+        {% endif %}
+
+        <!-- Container for the forest -->
+        <div id="forest" style="width: 100%; min-height: 200px; position: relative;"></div>
+
+        <script>
+        // Function to create an SVG tree
+        function createSvgTree(scale) {
+            var treeSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            var fullSize = 80; // Height of a full-size tree
+            var treeHeight = scale * fullSize;
+            var trunkHeight = treeHeight / 2;
+            var trunkWidth = scale * 10;
+            var foliageRadius = (treeHeight - trunkHeight) / 2;
+
+            treeSvg.setAttribute('width', '50'); // Fixed width for all trees
+            treeSvg.setAttribute('height', treeHeight.toString());
+            treeSvg.setAttribute('viewBox', `0 0 50 ${fullSize}`); // ViewBox to scale the SVG contents
+            treeSvg.setAttribute('class', 'tree-svg'); // Class for styling or identification
+
+            // Create the foliage (scaled circle)
+            var foliage = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            foliage.setAttribute('cx', '25');
+            foliage.setAttribute('cy', (fullSize / 2 - foliageRadius).toString());
+            foliage.setAttribute('r', foliageRadius.toString());
+            foliage.setAttribute('fill', 'rgb(1, 220, 132)');
+
+            // Create the trunk (scaled rectangle)
+            var trunk = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+            trunk.setAttribute('x', (25 - trunkWidth / 2).toString());
+            trunk.setAttribute('y', (fullSize / 2).toString());
+            trunk.setAttribute('width', trunkWidth.toString());
+            trunk.setAttribute('height', trunkHeight.toString());
+            trunk.setAttribute('fill', 'rgb(1, 220, 132)');
+            
+            // Append the foliage and trunk to the SVG element
+            treeSvg.appendChild(foliage);
+            treeSvg.appendChild(trunk);
+
+            return treeSvg;
+        }
+
+        // Function to generate the forest based on the number of trees
+        function generateForest(numTrees) {
+            var forestContainer = document.getElementById('forest');
+
+            // Clear previous trees
+            while (forestContainer.firstChild) {
+            forestContainer.removeChild(forestContainer.firstChild);
+            }
+
+            // Calculate the number of full-size trees and the fractional part of the last tree
+            var fullTrees = Math.floor(numTrees);
+            var fractionalTree = numTrees - fullTrees;
+
+            // Create full-size trees
+            for (var i = 0; i < fullTrees; i++) {
+            var tree = createSvgTree(1); // Full size tree
+            forestContainer.appendChild(tree);
+            }
+
+            // Create the fractional tree if there is a fractional part
+            if (fractionalTree > 0) {
+            var tree = createSvgTree(fractionalTree); // Fractional size tree
+            forestContainer.appendChild(tree);
+            }
+        }
+        {% if trees_balance %}
+            generateForest({{ trees_balance }});
+        {% endif %}
+        </script>
+    </div>
+    {% include 'footer.html' %}
+</div>
+{% endblock %}

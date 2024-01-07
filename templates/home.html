@@ -1,0 +1,37 @@
+{% extends "menu.html" %}
+
+{% block content %}
+<div class="index">
+    <h1>Carbon Footprint Calculator</h1>
+    <div class="container index-home-container">
+        <div class="index-text">
+            <p>Concerned about the environment and our dear planet, we developed the <b>CO2 Emissions Calculator</b> to understand the <span class="custom-tooltip">carbon footprint<span class="tooltip-text">The carbon footprint (or carbon content) is a measure of greenhouse gas emissions originating in human activity.</span></span> based on the electricity production sources.</p>
+            <br><p>We use the database of electricity consumption rates from different energy sources (Coal, Gas, Oil, Hydro, Renewable, Nuclear) in each of the world's country and region, and CO2 emissions per these sources. </p>
+            <br>
+        </div>
+        <div class="index-photo">
+            <img src="{{ url_for('static', filename='media/CO2_footprint.png') }}" alt="CO2 footprint">
+        </div>
+    </div>
+    {% with findings=findings %}
+        {% include 'findings.html' %}
+    {% endwith %}
+    <div class="index-text">
+        <br>
+        <div class="container-50-50-h">
+            <div class="container-50">
+                <h3><a href="{{ url_for('country_emissions') }}">Calculate CO2 emissions based on location and continuous electricity consumption in kWh >></a></h3>
+            </div>
+            <div class="container-50">
+                <h3><a href="{{ url_for('sql_console') }}">Or consult the database in SQL console >></a></h3>
+            </div>
+        </div>
+        <br>
+        <h4>Thank you for taking care of our planet!</h4>
+        <div class="index-photo-2">
+            <img src="{{ url_for('static', filename='media/care.png') }}" alt="CO2 footprint">
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</div>
+{% endblock %}

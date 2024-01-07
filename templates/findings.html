@@ -1,0 +1,11 @@
+{% block content %}
+<div class="page-home">
+    <br>
+    {% for finding in findings %}
+        {% with request=finding.request, results=finding.results, headers=finding.headers, total_emissions=finding.total_emissions %}
+            {% include 'finding.html' %}
+        {% endwith %}
+    {% endfor %} 
+    <br>
+</div>
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends "menu.html" %}
+{% block title %}Console{% endblock %}
+{% block content %}
+<div class="index">
+    <div class="page-console">
+        <div class="container">
+            <!-- Console Section -->
+            <div class="console">
+                <h1>SQL Query Console</h1>
+                <form action="/sql-console/execute" method="post">
+                    <textarea name="query" rows="4" cols="76"></textarea><br>
+                    <input type="submit" value="Execute">
+                </form>
+                {% if results %}
+                    <h2>Results:</h2>
+                    <table>
+                        <!-- Table Headers -->
+                        {% if headers %}
+                        <tr>
+                            {% for header in headers %}
+                            <th>{{ header }}</th>
+                            {% endfor %}
+                        </tr>
+                        {% endif %}
+                        <!-- Table Data -->
+                        {% for row in results %}
+                            <tr>
+                                {% for col in row %}
+                                    <td>{{ col }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+            </div>
+
+            <!-- Informational Section -->
+            <div class="info">
+                <!-- Collapsible Available Tables Section -->
+                <button type="button" class="collapsible"><span class="pointer">></span> Available Tables</button>
+                <div class="content">
+                    <div class="tables">
+                        <ul>
+                            {% for table in tables %}
+                                <li onclick="populateTable('{{ table }}')">{{ table }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Collapsible Available Views Section -->
+                <button type="button" class="collapsible"><span class="pointer">></span> Available Views</button>
+                <div class="content">
+                    <div class="tables">
+                        <ul>
+                            {% for view in views %}
+                                <li onclick="populateTable('{{ view }}')">{{ view }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Collapsible Query History Section -->
+                <button type="button" class="collapsible"><span class="pointer">></span> Query History</button>
+                <div class="content">
+                    <div class="history" style="max-height:200px; overflow-y:auto;">
+                        {% for query in history %}
+                            <p class="query" onclick="populateConsole('{{ query }}')">{{ query }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // JavaScript function to populate the console with the clicked query
+            function populateConsole(query) {
+                // Find the textarea for the query input and set its value to the clicked query
+                document.querySelector('textarea[name="query"]').value = query;
+            }
+
+            // JavaScript function to populate the console with a basic query for the clicked table
+            function populateTable(tableName) {
+                document.querySelector('textarea[name="query"]').value = 'SELECT * FROM ' + tableName + ' LIMIT 10;';
+            }
+
+            // Script for Collapsible Functionality
+            var coll = document.getElementsByClassName("collapsible");
+            for (let i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active"); // Toggle 'active' class
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
+
+            // Expand sections by default
+            window.onload = function() {
+                var coll = document.getElementsByClassName("collapsible");
+                for (let i = 0; i < coll.length; i++) {
+                    var content = coll[i].nextElementSibling;
+                    coll[i].classList.add("active"); // Add 'active' class
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            };
+        </script>
+    </div>
+    {% include 'footer.html' %}
+</div>
+{% endblock %}
+

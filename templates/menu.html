@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <header>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        <div class="menu">
+            <nav class="menu">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('country_emissions') }}">CO2 Emissions Calculator</a>
+                <a href="{{ url_for('sql_console') }}">SQL console</a>
+            </nav>
+        </div>
+        </header>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
