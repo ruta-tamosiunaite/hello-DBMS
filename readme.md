@@ -143,4 +143,111 @@ ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durabi
 
 **References:**
 - "ACID Properties" - [IBM](https://www.ibm.com/cloud/learn/acid-properties)
+
+
+## H. Merise and UML Methods: Overview and Historical Use
+
+### Relationship and Overview
+Both Merise and Unified Modeling Language (UML) are methodologies used to visualize and plan out aspects of information systems. While **Merise** is a structured methodology primarily used for designing and implementing databases, **UML** is a more flexible set of diagrams used to model software systems. Essentially, Merise helps in organizing the data structure, and UML assists in detailing software processes and interactions.
+
+### Merise Method
+- **Origin:** Developed in France in the 1970s.
+- **Usage:** Initially used extensively in French-speaking countries, it became a standard for database design, especially in Europe.
+- **Merise in Action:** Used in the 1980s and 1990s by European government agencies and companies to systematically design their databases.
+
+### Unified Modeling Language (UML)
+- **Origin:** Introduced in the 1990s by Grady Booch, Ivar Jacobson, and James Rumbaugh.
+- **Usage:** Gained rapid worldwide adoption due to its versatility and became a standard language for software modeling.
+- **UML in Action:** Adopted by tech giants like IBM and Microsoft in the late 1990s to design complex software systems, including operating systems and enterprise solutions.
+
+**References:**
+- "Merise: A European Methodology for Developing Information Systems" - [European Journal of Information Systems](https://www.ejis.com)
+- "The Unified Modeling Language" - [UML Official Website](https://www.uml.org)
+
+**Note:** Both methodologies have evolved with technology, but their core principles remain integral in system design and development.
     
+ 
+## I. Definition of SQL and Common Commands
+
+### SQL (Structured Query Language)
+**Definition:** SQL is a standardized programming language specifically designed for managing and manipulating relational databases. It's used for tasks such as querying data, updating records, and managing database structures.
+
+### Commonly Used SQL Commands
+
+1. **SELECT**
+```sql
+   SELECT column1, column2 FROM table_name;
+   -- Retrieves specific columns from a table
+```
+
+2. **ALTER**
+```sql
+    ALTER TABLE table_name ADD new_column datatype;
+    -- Adds a new column to a table
+```
+
+3. **DROP** 
+```sql
+    DROP TABLE table_name;
+    -- Deletes an entire table and its data
+```
+
+4. **CREATE**
+```sql
+    CREATE TABLE table_name (column1 datatype, column2 datatype);
+    -- Creates a new table with specified columns
+```
+
+5. **WHERE**
+```sql
+    SELECT * FROM table_name WHERE condition;
+    -- Retrieves rows that meet the specified condition
+```
+
+6. **LIKE**
+```sql
+    SELECT * FROM table_name WHERE column LIKE pattern;
+    -- Finds rows where a column's value matches a specified pattern
+```
+
+7. **BETWEEN**
+```sql
+    SELECT * FROM table_name WHERE column BETWEEN value1 AND value2;
+    -- Selects rows where a column's value is within a specified range
+```
+
+8. **IN**
+```sql
+    SELECT * FROM table_name WHERE column IN (value1, value2);
+    -- Selects rows where a column's value matches any value in the list 
+```
+
+### Different Types of SQL Joins
+
+1. **INNER JOIN**
+```sql
+    SELECT * FROM table1 INNER JOIN table2 ON table1.column_name = table2.column_name;
+    -- Returns rows when there is a match in both tables
+```
+
+2. **LEFT (OUTER) JOIN**
+```sql
+    SELECT * FROM table1 LEFT JOIN table2 ON table1.column_name = table2.column_name;
+    -- Returns all rows from the left table, and matched rows from the right table
+```
+
+3. **RIGHT (OUTER) JOIN**
+```sql
+    SELECT * FROM table1 RIGHT JOIN table2 ON table1.column_name = table2.column_name;
+    -- Returns all rows from the right table, and matched rows from the left table
+```
+
+4. **FULL (OUTER) JOIN**
+```sql
+    SELECT * FROM table1 FULL OUTER JOIN table2 ON table1.column_name = table2.column_name;
+    -- Returns all rows when there is a match in one of the tables
+```
+
+**References:**
+- "SQL Fundamentals" - [W3Schools](https://www.w3schools.com/sql/)
+- "Introduction to SQL" - [Khan Academy](https://www.khanacademy.org/computing/computer-programming/sql)
