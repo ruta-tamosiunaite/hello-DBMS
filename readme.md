@@ -21,10 +21,6 @@ Data refers to distinct pieces of information, usually formatted and stored in a
 
 Data is crucial for analysis, making informed decisions, and formulating strategies in various domains, including science, business, healthcare, and more.
 
-### References:
-- "What is Data?" - [IBM](https://www.ibm.com/cloud/learn/what-is-data)
-- "Understanding Structured, Unstructured, and Semi Structured Data" - [DataFlair](https://data-flair.training/blogs/structured-unstructured-semi-structured-data/)
-  
   
 ## B. Criteria for Measuring Data Quality
 
@@ -48,7 +44,6 @@ Maintaining high-quality data is essential for accurate decision-making and oper
 
 ### References:
 - "What is Data Quality and Why is it Important?" - [Talend](https://www.talend.com/resources/what-is-data-quality/)
-- "The Six Primary Dimensions for Data Quality Assessment" - [MIT Information Quality](http://web.mit.edu/tdqm/www/tdqmpub/LongeneckerPQ.PDF)
   
   
 ## C. Data Lake vs. Data Warehouse vs. Lake House
@@ -80,10 +75,6 @@ A Database Management System (DBMS) is software designed to store, manipulate, a
 | **MongoDB**  | MongoDB is a NoSQL document-oriented DBMS offering high flexibility and performance for applications with large data volumes. | ![MongoDB Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/2560px-MongoDB_Logo.svg.png) | [Official MongoDB Site](https://www.mongodb.com/) |
 | **Oracle Database** | Oracle Database is a powerful and comprehensive relational DBMS used for large enterprise applications.               | ![Oracle Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Oracle_Logo.svg/2560px-Oracle_Logo.svg.png) | [Official Oracle Site](https://www.oracle.com/database/) |
 
-### References:
-- "Introduction to Databases" - [Oracle](https://www.oracle.com/database/what-is-database.html)
-- "Choosing a Database" - [AWS](https://aws.amazon.com/products/databases/)
-  
   
 ## E. Relational vs. Non-Relational Databases
 
@@ -141,9 +132,6 @@ ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durabi
 - **Isolation**: When multiple clerks are selling tickets, the system must ensure that they see a consistent view of available seats to prevent double-booking.
 - **Durability**: After confirming a reservation, the booking details must not be lost, even if there's a system failure.
 
-**References:**
-- "ACID Properties" - [IBM](https://www.ibm.com/cloud/learn/acid-properties)
-
 
 ## H. Merise and UML Methods: Overview and Historical Use
 
@@ -161,7 +149,6 @@ Both Merise and Unified Modeling Language (UML) are methodologies used to visual
 - **UML in Action:** Adopted by tech giants like IBM and Microsoft in the late 1990s to design complex software systems, including operating systems and enterprise solutions.
 
 **References:**
-- "Merise: A European Methodology for Developing Information Systems" - [European Journal of Information Systems](https://www.ejis.com)
 - "The Unified Modeling Language" - [UML Official Website](https://www.uml.org)
 
 **Note:** Both methodologies have evolved with technology, but their core principles remain integral in system design and development.
