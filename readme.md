@@ -56,12 +56,14 @@ Maintaining high-quality data is essential for accurate decision-making and oper
 | **Data Quality** | May contain raw, unverified data. | Often has higher data quality due to processing and structuring. | Maintains a balance with data management features. |
 | **Use Case**    | Ideal for big data processing and data science. | Best for structured reporting and business intelligence. | Versatile, catering to both analytics and operational purposes. |
 
-Data processing differences in Data Lake, Data Warehouse and Lake House
+Data processing differences in Data Lake, Data Warehouse and Lake House:
+
 ![Database Architecture Scheme](database_architecture.png)
 
 ### References:
 - "Data Lake vs. Data Warehouse" - [AWS](https://aws.amazon.com/big-data/datalakes-and-analytics/what-is-a-data-lake/)
 - "What is a Data Lakehouse?" - [Databricks](https://databricks.com/glossary/data-lakehouse)
+- - "Schema on read and Schema-on-write" - [Medium](https://medium.com/@deepa.account/schema-on-read-and-schema-on-write-ac72524926b)
   
   
 ## D. Database Management Systems (DBMS)
