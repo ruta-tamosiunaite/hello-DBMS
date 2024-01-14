@@ -56,6 +56,9 @@ Maintaining high-quality data is essential for accurate decision-making and oper
 | **Data Quality** | May contain raw, unverified data. | Often has higher data quality due to processing and structuring. | Maintains a balance with data management features. |
 | **Use Case**    | Ideal for big data processing and data science. | Best for structured reporting and business intelligence. | Versatile, catering to both analytics and operational purposes. |
 
+Data processing differences in Data Lake, Data Warehouse and Lake House
+![Database Architecture Scheme](database_architecture.png)
+
 ### References:
 - "Data Lake vs. Data Warehouse" - [AWS](https://aws.amazon.com/big-data/datalakes-and-analytics/what-is-a-data-lake/)
 - "What is a Data Lakehouse?" - [Databricks](https://databricks.com/glossary/data-lakehouse)
@@ -74,6 +77,7 @@ A Database Management System (DBMS) is software designed to store, manipulate, a
 | **PostgreSQL**| PostgreSQL is an advanced, open-source relational DBMS, focusing on standards and extensibility.                        | ![PostgreSQL Logo](https://bleemeo.com/static/96fc932c24667bf130cd1bbd6c5f7b96/5aae9/Postgre_logo.png) | [Official PostgreSQL Site](https://www.postgresql.org/) |
 | **MongoDB**  | MongoDB is a NoSQL document-oriented DBMS offering high flexibility and performance for applications with large data volumes. | ![MongoDB Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/2560px-MongoDB_Logo.svg.png) | [Official MongoDB Site](https://www.mongodb.com/) |
 | **Oracle Database** | Oracle Database is a powerful and comprehensive relational DBMS used for large enterprise applications.               | ![Oracle Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Oracle_Logo.svg/2560px-Oracle_Logo.svg.png) | [Official Oracle Site](https://www.oracle.com/database/) |
+| **SQLite** | SQLite is a lightweight, self-contained, open-source relational database engine widely used for embedded and mobile applications. | ![SQLite Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/2560px-SQLite370.svg.png) | [Official SQLite Site](https://www.sqlite.org/index.html)
 
   
 ## E. Relational vs. Non-Relational Databases
@@ -136,20 +140,30 @@ ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durabi
 ## H. Merise and UML Methods: Overview and Historical Use
 
 ### Relationship and Overview
-Both Merise and Unified Modeling Language (UML) are methodologies used to visualize and plan out aspects of information systems. While **Merise** is a structured methodology primarily used for designing and implementing databases, **UML** is a more flexible set of diagrams used to model software systems. Essentially, Merise helps in organizing the data structure, and UML assists in detailing software processes and interactions.
+Both Merise and Unified Modeling Language (UML) are methodologies - visual languages - used to visualize and plan out aspects of information systems. **Merise** is a structured methodology primarily used for designing and implementing databases. **UML** is a more flexible set of diagrams used to model software systems. Essentially, Merise helps in organizing the data structure, and UML assists in detailing behavior and architecture of a system.
 
 ### Merise Method
 - **Origin:** Developed in France in the 1970s.
 - **Usage:** Initially used extensively in French-speaking countries, it became a standard for database design, especially in Europe.
 - **Merise in Action:** Used in the 1980s and 1990s by European government agencies and companies to systematically design their databases.
 
+Example of database structure using Merise method:
+![Merise](https://ineumann.developpez.com/tutoriels/merise/initiation-merise/images/id_relative.png) 
+
 ### Unified Modeling Language (UML)
 - **Origin:** Introduced in the 1990s by Grady Booch, Ivar Jacobson, and James Rumbaugh.
 - **Usage:** Gained rapid worldwide adoption due to its versatility and became a standard language for software modeling.
 - **UML in Action:** Adopted by tech giants like IBM and Microsoft in the late 1990s to design complex software systems, including operating systems and enterprise solutions.
 
+An example of Class diagram in Unified Modeling Language: 
+![Sergi Valverde publication](https://www.researchgate.net/profile/Sergi-Valverde/publication/225686440/figure/fig3/AS:667828239732738@1536234068086/A-simple-class-diagram-for-a-commercial-software-application-in-UML-notation-The.png)
+
+Different types of UML diagrams:
+![UML diagrams](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/UML_diagrams_overview.svg/600px-UML_diagrams_overview.svg.png)
+
 **References:**
 - "The Unified Modeling Language" - [UML Official Website](https://www.uml.org)
+- "Unified Modeling Language Introduction" - [GeeksForGeeks](https://www.geeksforgeeks.org/unified-modeling-language-uml-introduction/)
 
 **Note:** Both methodologies have evolved with technology, but their core principles remain integral in system design and development.
     
