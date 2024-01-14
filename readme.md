@@ -158,7 +158,7 @@ Example of database structure using Merise method:
 - **UML in Action:** Adopted by tech giants like IBM and Microsoft in the late 1990s to design complex software systems, including operating systems and enterprise solutions.
 
 An example of Class diagram in Unified Modeling Language: 
-![Sergi Valverde publication](https://www.researchgate.net/profile/Sergi-Valverde/publication/225686440/figure/fig3/AS:667828239732738@1536234068086/A-simple-class-diagram-for-a-commercial-software-application-in-UML-notation-The.png)
+![Medium](https://miro.medium.com/v2/resize:fit:1176/1*RebgdkysHeZWj900zas_lg.png)
 
 Different types of UML diagrams:
 ![UML diagrams](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/UML_diagrams_overview.svg/600px-UML_diagrams_overview.svg.png)
